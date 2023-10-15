@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inputRegBox {
+    width: 100%;
+}
+
+.inputReg {
+    height: 45px;
+    padding-left: 10px;
+}
+
+
