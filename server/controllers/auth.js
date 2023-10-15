@@ -21,7 +21,7 @@ export const registerUser = async (req, res, next) => {
             username,
             email,
             password: passwordHash,
-            profileImg: profileImg || "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            profileImg: profileImg || "https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F020%2F765%2F399%2Foriginal%2Fdefault-profile-account-unknown-icon-black-silhouette-free-vector.jpg&tbnid=-QHjZLjhAVWi0M&vet=12ahUKEwij04ik6PeBAxUNW6QEHY8zDFAQMygOegUIARCOAQ..i&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Fvector-art%2F20765399-default-profile-account-unknown-icon-black-silhouette&docid=plFCvjlpMSbtoM&w=1920&h=1920&q=unknown%20user%20picture&ved=2ahUKEwij04ik6PeBAxUNW6QEHY8zDFAQMygOegUIARCOAQ"
         })
 
         const user = {
