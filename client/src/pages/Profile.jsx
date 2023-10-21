@@ -75,15 +75,14 @@ export default function Profile() {
       setLoading(false);
     }
     };
-    // onSubmitHandler()
   const {
     register,
-    // handleSubmit,
+
     formState: { errors },
   } = useForm({
     defaultValues: {
-      username: currentUser?.user?.username,
-      email: currentUser?.user?.email,
+      username: currentUser.user?.username,
+      email: currentUser.user?.email,
     },
   });
 
