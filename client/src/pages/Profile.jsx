@@ -99,7 +99,7 @@ export default function Profile() {
         <form
           className="flex flex-col items-center justify-between"
           style={{ width: "100%", height: "75vh" }}
-          onSubmit={handleSubmit(onSubmitHandler())}
+          onSubmit={onSubmitHandler()}
         >
           <img
             src={data.profileImg}
