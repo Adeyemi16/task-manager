@@ -30,8 +30,8 @@ export default function Profile() {
     currentUser.access_token
   );
   useEffect(() => {
-    document.title = `${username} profile`;
-  }, [username]);
+    document.title = `${data?.username} profile`;
+  }, [data?.username]);
 
   useEffect(() => {
     if (imgPic !== "") {
@@ -54,6 +54,17 @@ export default function Profile() {
 
   const navigate = useNavigate();
 
+ const {
+   register,
+   handleSubmit,
+   formState: { errors },
+ } = useForm({
+   defaultValues: {
+     username: currentUser?.user?.username,
+     email: currentUser?.user?.email,
+   },
+ });
+
   const onSubmitHandler = async (item) => {
     const updatedProfile = {
       _id: currentUser?.user?._id,
@@ -67,7 +78,7 @@ export default function Profile() {
       const res = await updateUser(updatedProfile, currentUser.access_token);
         setCurrentUser(res.data);
         toast.success("Your Profile was updated successfully");
-        navigate(`/account/${res.data.user.username}`);
+        navigate(`/account/${res.data?.user?.username}`);
     } catch (error) {
       console.log(error);
       toast.error("Error updating your profile");
@@ -75,16 +86,7 @@ export default function Profile() {
       setLoading(false);
     }
     };
-  const {
-    register,
-
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      username: currentUser.user?.username,
-      email: currentUser.user?.email,
-    },
-  });
+ 
 
   {
     error && <p className="mt-5 fs-5">{error.message}</p>
@@ -97,7 +99,7 @@ export default function Profile() {
         <form
           className="flex flex-col items-center justify-between"
           style={{ width: "100%", height: "75vh" }}
-          onSubmit={onSubmitHandler}
+          onSubmit={handleSubmit(onSubmitHandler)}
         >
           <img
             src={data.profileImg}
