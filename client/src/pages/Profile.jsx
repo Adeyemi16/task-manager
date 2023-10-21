@@ -103,7 +103,7 @@ export default function Profile() {
           <img
             src={data.profileImg}
             alt=""
-            className="w-40 h-40"
+            className="w-20 h-20"
             style={{ borderRadius: "50%" }}
           />
           <div
