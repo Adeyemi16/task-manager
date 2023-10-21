@@ -9,7 +9,7 @@ import { Input } from "../components/ui/input";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-// import { Button } from "../components/ui/button";
+import { Button } from "../components/ui/button";
 import { AiFillEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import registerOptions from "../utils/formValidation";
 
@@ -174,13 +174,13 @@ export default function Profile() {
                 onChange={(e) => setImgPic(e.target.files[0])}
               />
             </div>
-              <button
+              <Button
                 type='submit'
               className="bg-gray-950 text-white"
               //   disabled={loading}
             >
               Update
-            </button>
+            </Button>
           </div>
         </form>
       )}
