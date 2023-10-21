@@ -68,7 +68,7 @@ export default function Profile() {
       if (res.status === 201) {
         setCurrentUser(res.data);
         toast.success("Your Profile was updated successfully");
-        navigate(`/account/${res.data?.user?.username}`);
+        navigate(`/account/${updatedProfile.username}`);
       }
     } catch (error) {
       console.log(error);
