@@ -56,7 +56,6 @@ export default function Profile() {
 
  const {
    register,
-   handleSubmit,
    formState: { errors },
  } = useForm({
    defaultValues: {
