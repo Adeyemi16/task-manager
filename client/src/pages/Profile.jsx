@@ -57,9 +57,9 @@ export default function Profile() {
   const onSubmitHandler = async (item) => {
     const updatedProfile = {
       _id: currentUser?.user?._id,
-      username: item?.username,
-      email: item?.email,
-      password: item?.password,
+      username: item.username,
+      email: item.email,
+      password: item.password,
       profileImg: imgLink,
     };
     try {
