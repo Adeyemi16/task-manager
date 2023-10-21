@@ -65,17 +65,19 @@ export default function Profile() {
     try {
       setLoading(true);
       const res = await updateUser(updatedProfile, currentUser.access_token);
-      setCurrentUser(res.data);
-      toast.success("Your Profile was updated successfully");
-      navigate(`/account/${updatedProfile?.username}`);
+      if (res.status === 201) {
+        setCurrentUser(res.data);
+        toast.success("Your Profile was updated successfully");
+        navigate(`/account/${res.data.user.username}`);
+      }
     } catch (error) {
       console.log(error);
       toast.error("Error updating your profile");
     } finally {
       setLoading(false);
     }
-  };
-  // onSubmitHandler()
+    };
+    // onSubmitHandler()
   const {
     register,
     // handleSubmit,
@@ -88,7 +90,7 @@ export default function Profile() {
   });
 
   {
-    error && <p className="mt-5 fs-5">{error.message}</p>;
+    error && <p className="mt-5 fs-5">{error.message}</p>
   }
   return (
     <PageLayout>
