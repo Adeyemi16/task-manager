@@ -67,7 +67,7 @@ export default function Profile() {
       const res = await updateUser(updatedProfile, currentUser.access_token);
       setCurrentUser(res.data);
       toast.success("Your Profile was updated successfully");
-      navigate(`/account/${updatedProfile.username}`);
+      navigate(`/account/${updatedProfile?.username}`);
     } catch (error) {
       console.log(error);
       toast.error("Error updating your profile");
